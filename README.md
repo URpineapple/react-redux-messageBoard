@@ -6,6 +6,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Message Board is a simple and effective react-redux web application that allows visitors to write down their words online and save it
 
+## Preview
+![Screenshot of Application](src/images/screenshot.JPG)
+
 ## Installation
 - Clone the repo in your terminal by clicking the _green_ clone or download button at the top right and copyin the url
 - In your terminal, type  ```git clone URL```
