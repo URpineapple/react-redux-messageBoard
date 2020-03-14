@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import TransactionForm from './TransactionForm'
 import { connect } from 'react-redux'
 import * as actions from '../actions/transactionActions'
+import Table from 'react-bootstrap/Table'
 import { bindActionCreators } from 'redux'
 
 class TransactionList extends Component {
@@ -17,24 +18,24 @@ class TransactionList extends Component {
     render() {
         return (
             <div>
-                <TransactionForm/>
-                <hr />
-                <table>
+                <TransactionForm />
+                <br />
+                <Table>
                     <tbody>
                         {
                             this.props.list.map((item, index) => {
                                 return <tr key={index}>
-                                    <td>{item.bAccountNo}</td>
-                                    <td>{item.iFSC}</td>
-                                    <td>{item.bName}</td>
-                                    <td>{item.amount}</td>
-                                    <td><button onClick={() => this.handleEdit(index)}>Edit</button></td>
-                                    <td><button onClick={() => this.handleDelete(index)}>Delete</button></td>
+                                    <td>{item.username}</td>
+                                    <td>{item.email}</td>
+                                    <td>{item.notedate}</td>
+                                    <td>{item.textarea}</td>
+                                    <td><button className="btn btn-secondary btn-block" onClick={() => this.handleEdit(index)}>Edit</button></td>
+                                    <td><button className="btn btn-secondary btn-block" onClick={() => this.handleDelete(index)}>Delete</button></td>
                                 </tr>
                             })
                         }
                     </tbody>
-                </table>
+                </Table>
             </div>
         )
     }

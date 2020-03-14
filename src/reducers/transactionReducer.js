@@ -8,7 +8,7 @@ export const transactionReducer = (state, action) => {
             return { list, currentIndex: -1 }
 
         case "UPDATE":
-            list[action.currentIndex] = action.payload
+            list[state.currentIndex] = action.payload
             localStorage.setItem('transactions', JSON.stringify(list))
             return { list, currentIndex: -1 }
 

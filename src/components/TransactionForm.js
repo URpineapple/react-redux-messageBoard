@@ -11,10 +11,10 @@ class TransactionForm extends Component {
     returnStateObject() {
         if (this.props.currentIndex == -1)
             return {
-                bAccountNo: '',
-                iFSC: '',
-                bName: '',
-                amount: ''
+                username: '',
+                email: '',
+                notedate: '',
+                textarea: ''
             }
         else
             return this.props.list[this.props.currentIndex]
@@ -43,21 +43,27 @@ class TransactionForm extends Component {
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit} autoComplete="off">
-                <input name="bAccountNo" placeholder="A/C No."
-                    value={this.state.bAccountNo}
-                    onChange={this.handleInputChange} /><br />
-                <input name="iFSC" placeholder="IFSC Code"
-                    value={this.state.iFSC}
-                    onChange={this.handleInputChange} /><br />
-                <input name="bName" placeholder="A/C Hoder Name"
-                    value={this.state.bName}
-                    onChange={this.handleInputChange} /><br />
-                <input name="amount" placeholder="Amount"
-                    value={this.state.amount}
-                    onChange={this.handleInputChange} /><br />
-                <button type="submit">Submit</button>
-            </form>
+            <div>
+                <h1>Message Board</h1>
+                <br />
+                <form onSubmit={this.handleSubmit} autoComplete="off" id="initialForm">
+                    <input className="form-control" name="username" placeholder="Your name"
+                        value={this.state.username}
+                        onChange={this.handleInputChange} required /><br />
+                    <input className="form-control" name="email" placeholder="Email address"
+                        value={this.state.email}
+                        onChange={this.handleInputChange} /><br />
+                    <input type="date" className="form-control" name="notedate"
+                        value={this.state.notedate}
+                        onChange={this.handleInputChange} /><br />
+                    <textarea className="form-control" row="3" name="textarea"
+                        placeholder="Write down something you like"
+                        value={this.state.textarea}
+                        onChange={this.handleInputChange} required /><br />
+                    <button className="btn btn-primary" type="submit">Submit</button>
+                </form>
+
+            </div>
         )
     }
 }
