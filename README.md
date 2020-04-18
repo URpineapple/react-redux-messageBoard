@@ -1,9 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 # Message Board
-
-## Description
-
 Message Board is a simple and effective react-redux web application that allows visitors to write down their words online and save it
 
 ## Preview
